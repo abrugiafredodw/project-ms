@@ -3,6 +3,7 @@ import { HealthModule } from './health/health.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerModule } from 'nestjs-pino';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { LoggerModule } from 'nestjs-pino';
         };
       },
     }),
+    ProjectModule,
   ],
   controllers: [],
   providers: [],
