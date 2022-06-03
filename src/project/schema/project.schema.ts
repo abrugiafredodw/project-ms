@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document, Types, Schema as MongooseSchema } from 'mongoose';
 import { Client } from '../model/client';
-import { Talent } from '../model/Talent';
+import { Talent } from '../model/talent';
 import { State } from '../enum/state.enum';
 
 export type ProjectDocument = Project & Document;
@@ -21,7 +21,7 @@ export class Project {
 
   @Prop({
     ref: 'clients',
-    type: Types.ObjectId,
+    type: MongooseSchema.Types.ObjectId,
   })
   client: Client;
 
@@ -29,7 +29,7 @@ export class Project {
     type: [
       {
         ref: 'talents',
-        type: Types.ObjectId,
+        type: MongooseSchema.Types.ObjectId,
       },
     ],
   })

@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Logger, LoggerErrorInterceptor, PinoLogger } from 'nestjs-pino';
+import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
 import { FallbackFilter } from './filters/fallback.filter';
 import { ErrorFilter } from './filters/error.filter';
 import { HealthFilter } from './filters/health.filter';
