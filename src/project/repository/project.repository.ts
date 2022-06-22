@@ -24,8 +24,11 @@ export class ProjectRepository {
 
     async update(updateProject: UpdateProjectDto): Promise<Project>
     {
-        const project = new this.projectMD(updateProject);
-        return project.save();
+        return this.projectMD.findOneAndUpdate(
+            { _id: updateProject._id },
+            updateProject,
+            { new: true },
+        );
     }
 
     async findAll(options?:any): Promise<Project[]> {
