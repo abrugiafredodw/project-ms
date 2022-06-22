@@ -40,6 +40,11 @@ export class Project {
     enum: State,
   })
   state: State;
+
+  @Prop({
+    required: true,
+  })
+  avail: boolean;
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);

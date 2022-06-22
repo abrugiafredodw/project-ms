@@ -28,8 +28,8 @@ export class ProjectRepository {
         return project.save();
     }
 
-    async findAll(): Promise<Project[]> {
-        return this.projectMD.find().populate({path:"client",model:this.clientMD}).populate({path:"talents",model:this.talentMD}).exec();
+    async findAll(options?:any): Promise<Project[]> {
+        return this.projectMD.find(options).populate({path:"client",model:this.clientMD}).populate({path:"talents",model:this.talentMD}).exec();
     }
 
     async findOne(options?: any): Promise<Project> {
